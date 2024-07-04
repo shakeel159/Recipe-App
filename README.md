@@ -1,6 +1,5 @@
-# Website Link
-
-
+#  View my Website Here
+[Rcipe-App](https://shakeel159.github.io/Recipe-App/)
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
@@ -14,12 +13,12 @@ Currently, two official plugins are available:
 # developers Note:
 
 how to run using cammand lines:
-git status
-git add .
-git commit -m "Describe the changes you made"
-git push origin main
-//update locally
-npm run dev
-//deploy online
-npm run build
-npm run deploy
+- git status
+- git add .
+- git commit -m "Describe the changes you made"
+- git push origin main
+- //update locally
+- npm run dev
+- //deploy online
+- npm run build
+- npm run deploy
