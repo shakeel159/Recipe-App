@@ -14,7 +14,7 @@ const Body = ({ searchFor, listItems }) => {
               key={index}
               image={item.image}
               name={item.title}
-              description={item.dishTypes || 'No description available'}
+              description={Array.isArray(item.dishTypes) ? item.dishTypes.join(', ') : item.dishTypes || 'No description available'}
               link={`/recipe/${item.id}`}
             />
           ))
@@ -39,7 +39,7 @@ const Body = ({ searchFor, listItems }) => {
               key={index}
               image={item.image}
               name={item.title}
-              description={item.dishTypes || 'No description available'}
+              description={Array.isArray(item.dishTypes) ? item.dishTypes.join(', ') : item.dishTypes || 'No description available'}
               link={`/recipe/${item.id}`}
             />
           ))}
@@ -55,7 +55,10 @@ Body.propTypes = {
     PropTypes.shape({
       image: PropTypes.string.isRequired,
       title: PropTypes.string.isRequired,
-      cuisine: PropTypes.string,
+      dishTypes: PropTypes.oneOfType([
+        PropTypes.arrayOf(PropTypes.string),
+        PropTypes.string
+      ]),
       id: PropTypes.number.isRequired,
     })
   ).isRequired,
