@@ -1,13 +1,16 @@
 
 function Sevices() {
     return(
-      <div>
-        <BrowserRouter>
-          <Routes>
-            <Route index element={<Sevices />}/>
-          </Routes>
-        </BrowserRouter>
-      </div>
+      <>
+      <div className="App">
+            <div className="MainContentWrapper">
+                <Header setSearchFor={setSearchFor} />
+                <hr />
+                <h2>Services Page</h2>
+                <Footer />
+            </div>
+        </div>
+      </>
     );
     
   }

@@ -3,13 +3,16 @@
 
 function Contact() {
     return(
-      <div>
-        <BrowserRouter>
-          <Routes>
-            <Route index element={<Contact />}/>
-          </Routes>
-        </BrowserRouter>
-      </div>
+      <>
+      <div className="App">
+            <div className="MainContentWrapper">
+                <Header setSearchFor={setSearchFor} />
+                <hr />
+                <h2>Contact Page</h2>
+                <Footer />
+            </div>
+        </div>
+      </>
     );
     
   }

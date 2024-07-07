@@ -1,6 +1,7 @@
-
-function SideBar(){
-
+import { useState } from "react";
+import { useNavigate } from 'react-router-dom';
+function SideBar({ setCategory  }){
+    const navigate = useNavigate();
     return(
         <div className="SideBar">
             <div className="SideBarTopic">
@@ -9,10 +10,10 @@ function SideBar(){
             <hr></hr>
             </div>
             <div className="SideBarBtns">
-            <button href="#" className="Btns">Breakfast</button>
-            <button href="#" className="Btns">Dinner</button>
-            <button href="#" className="Btns">Dessert</button>
-            <button href="#" className="Btns">Drinks</button>
+            <button onClick={() => setCategory('breakfast')} className="Btns">Breakfast</button>
+            <button onClick={() => setCategory('dinner')} className="Btns">Dinner</button>
+            <button onClick={() => setCategory('dessert')} className="Btns">Dessert</button>
+            <button onClick={() => setCategory('drink')} className="Btns">Drinks</button>
             </div>
         </div>
 

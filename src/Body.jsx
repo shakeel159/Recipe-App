@@ -9,7 +9,8 @@ const Body = ({ searchFor, listItems }) => {
       <>
         <Food FeaturedItem={"Featured Recipes:"} />
         {listItems.length > 0 ? (
-          listItems.map((item, index) => (
+          <div className="card-container">
+          {listItems.map((item, index) => (
             <Card
               key={index}
               image={item.image}
@@ -17,7 +18,8 @@ const Body = ({ searchFor, listItems }) => {
               description={Array.isArray(item.dishTypes) ? item.dishTypes.join(', ') : item.dishTypes || 'No description available'}
               link={`/recipe/${item.id}`}
             />
-          ))
+          ))}
+        </div>
         ) : (
           <p>Loading...</p>
         )}
@@ -34,15 +36,17 @@ const Body = ({ searchFor, listItems }) => {
       return (
         <>
           <Food FeaturedItem={`Search For: ${searchFor}`} />
-          {filteredItems.map((item, index) => (
-            <Card
-              key={index}
-              image={item.image}
-              name={item.title}
-              description={Array.isArray(item.dishTypes) ? item.dishTypes.join(', ') : item.dishTypes || 'No description available'}
-              link={`/recipe/${item.id}`}
-            />
-          ))}
+          <div className="card-container">
+            {filteredItems.map((item, index) => (
+              <Card
+                key={index}
+                image={item.image}
+                name={item.title}
+                description={Array.isArray(item.dishTypes) ? item.dishTypes.join(', ') : item.dishTypes || 'No description available'}
+                link={`/recipe/${item.id}`}
+              />
+            ))}
+          </div>
         </>
       );
     }

@@ -1,15 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 function Card({ image, name, description, link }) {
   return (
-    <a href={link} className="card-link">
+    <Link to={link} className="card-link">
       <div className="card">
         <img className="cardImage" src={image} alt={name} />
         <h2 className="cardTitle">{name}</h2>
         <p className="cardNameText">{description}</p>
       </div>
-    </a>
+      </Link>
   );
 }
 
